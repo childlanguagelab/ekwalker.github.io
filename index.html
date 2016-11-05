@@ -1,44 +1,160 @@
 <!DOCTYPE html>
 <html>
 
-  <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="description" content="ekwalker.github.io : ">
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="description" content="ekwalker.github.io : ">
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+  <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+  <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/styles.css">
 
-    <title>ekwalker.github.io</title>
-  </head>
+  <title>ekwalker.github.io</title>
 
-  <body>
+  <script type="text/javascript" src="javascripts/jquery-3.1.1.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  
+  <script type="text/javascript" src="javascripts/main.js"></script>
+  <script src="https://use.fontawesome.com/29564188a7.js"></script>
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/ekwalker">View on GitHub</a>
+</head>
 
-          <h1 id="project_title">ekwalker.github.io</h1>
-          <h2 id="project_tagline"></h2>
+<body>
 
-        </header>
+<!-- HEADER -->
+<div id="header_wrap" class="outer">
+  <header class="inner">
+    <h1 id="project_title">Survey</h1>
+    <h2 id="project_tagline">Please drag each statement to the column that best describes your opinion. (4 answers per column)</h2>
+  </header>
+  <div id="send-wrapper" class="disabled">
+    <div class="send-button">Finish & Send</div>
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div id="main_content_wrap" class="outer">
+  <section id="main_content" class="inner">
+    <div id="bucket-0" class="question-container bucket">
+      <div class="question bucket-0" draggable="true">
+        When families do not participate in a session, it is the early intervention provider's responsibility to find a way to engage the parent.
+      </div>
+      <div class="question bucket-0" draggable="true">
+        Families who do not do follow-up activities are less invested in their children.
+      </div>
+      <div class="question bucket-0" draggable="true">
+        The role of early intervention providers should be to train, teach, or coach the parents- not to work directly with the child.
+      </div>
+      <div class="question bucket-0" draggable="true">
+        The parent's role should be to act as their child's parent, not as their teacher.
+      </div>
+      <div class="question bucket-0" draggable="true">
+        When early intervention providers teach parents skills to use with their children, parents feel they are not being viewed as capable of meeting their child's needs.
+      </div>
+      <div class="question bucket-0" draggable="true">
+        The child's participation in family activities/routines is more important than learning developmental skills.
+      </div>
+      <div class="question bucket-0" draggable="true">
+        It is acceptable for providers to do hands-on intervention when families want the provider to work directly with the child.
+      </div>
+      <div class="question bucket-0" draggable="true">
+        All families have the knowledge to select strategies to help their children learn.
+      </div>
+      <div class="question bucket-0" draggable="true">
+        Early intervention services should be targeted to the developmental concerns which the family, not the provider, feels are most important.
+      </div>
+      <div class="question bucket-0" draggable="true">
+        Early intervention services should always be provided in the home.
+      </div>
+      <div class="question bucket-0" draggable="true">
+        There are no circumstances where it is acceptable for early intervention providers to bring in their own materials.
+      </div>
+      <div class="question bucket-0" draggable="true">
+        Early intervention providers should include other children who are present during a session.
+      </div>
+      <div class="question bucket-0" draggable="true">
+        Service coordinators should be the team members who collect all the information about the family's activities/routines.
+      </div>
+      <div class="question bucket-0" draggable="true">
+        In order for families to successfully access resources, service coordinators need to provide more assistance than written information or contact names.
+      </div>
+      <div class="question bucket-0" draggable="true">
+        The child's engagement (e.g. interest/happiness) should be of primary importance in a session.
+      </div>
+      <div class="question bucket-0" draggable="true">
+        Sessions should be oriented to what the child needs to learn how to do.
+      </div>
+      <div class="question bucket-0" draggable="true">
+        Keeping records of their work with children helps providers make informed decisions about what they are teaching families to do.
+      </div>
+      <div class="question bucket-0" draggable="true">
+        There are no opportunities for teamwork or collaboration among providers when early intervention services are provided by independent providers.
+      </div>
+      <div class="question bucket-0" draggable="true">
+        All early intervention providers, regardless of their discipline, have the skills and abilities to work effectively with all infants and toddlers.
+      </div>
+      <div class="question bucket-0" draggable="true">
+        An early intervention provider's competence is related more to their formal training (e.g. graduate) than to their on-the-job experiences
+      </div>
     </div>
-
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <p>Hello World.</p>
-      </section>
+    <div class="answer-container">
+      <div class="answer-bucket">
+        <div class="answer-header">
+          Strongly Disagree
+        </div>
+        <div class="error-banner" title="Too many answers in this column, please readjust.">
+          <i class="fa fa-warning"></i> Too many answers
+        </div>
+        <div id="bucket-1" class="answer-content bucket"></div>
+      </div>
+      <div class="answer-bucket">
+        <div class="answer-header">
+          Disagree
+        </div>
+        <div class="error-banner" title="Too many answers in this column, please readjust.">
+          <i class="fa fa-warning"></i> Too many answers
+        </div>
+        <div id="bucket-2" class="answer-content bucket"></div>
+      </div>
+      <div class="answer-bucket">
+        <div class="answer-header">
+          Neutral
+        </div>
+        <div class="error-banner" title="Too many answers in this column, please readjust.">
+          <i class="fa fa-warning"></i> Too many answers
+        </div>
+        <div id="bucket-3" class="answer-content bucket"></div>
+      </div>
+      <div class="answer-bucket">
+        <div class="answer-header">
+          Agree
+        </div>
+        <div class="error-banner" title="Too many answers in this column, please readjust.">
+          <i class="fa fa-warning"></i> Too many answers
+        </div>
+        <div id="bucket-4" class="answer-content bucket"></div>
+      </div>
+      <div class="answer-bucket">
+        <div class="answer-header">
+          Strongly Agree
+        </div>
+        <div class="error-banner" title="Too many answers in this column, please readjust.">
+          <i class="fa fa-warning"></i> Too many answers
+        </div>
+        <div id="bucket-5" class="answer-content bucket"></div>
+      </div>
     </div>
+</div>
+</section>
+</div>
 
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div>
+<!-- FOOTER  -->
+<div id="footer_wrap" class="outer">
+  <footer class="inner">
+    <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+  </footer>
+</div>
 
-    
 
-  </body>
+</body>
 </html>
