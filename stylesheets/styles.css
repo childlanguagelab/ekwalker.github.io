@@ -108,10 +108,7 @@
   border-left: 1px solid #bbb;
   background: #FFFFFF;
   padding: 25px 40px;
-}
-
-#send-wrapper.disabled {
-  display: none;
+  z-index: 1;
 }
 
 .send-button {
