@@ -1,14 +1,13 @@
-
-
-// Overall viewmodel for this screen, along with initial state
 function ViewModel() {
    var self = this;
-   self.pane = ko.observable('survey1');
+   self.pane = ko.observable(0);
    self.showSave = ko.observable(false);
    self.name = ko.observable('Test');
    self.answers = ko.observableArray([]);
    
    self.submitSurvey = submitSurvey;
+   self.nextPane = nextPane;
+   self.prevPane = prevPane;
    
    $('.bucket').sortable({
       connectWith: ".bucket",
@@ -57,19 +56,28 @@ function ViewModel() {
       $.each(answerBuckets, function (key) {
          var bucket = $(answerBuckets[key]);
          var bucketId = bucket.attr('id').match(/[0-9]/)[0];
-         var children = [];
+         var children = "";
          $.each(bucket.children(), function(key) {
             var child = $(bucket.children()[key]);
-            children.push(child.attr('id'));
+            children += child.attr('id') + ",";
          });
-         self.answers()[bucketId] = children;
+         self.answers()[bucketId] = children.slice(0, -1);
       });
       console.log('full answers');
       console.log(self.answers());
+      
+      var data = {
+         'Name': self.name(),
+         'Strongly Disagree': self.answers()[1],
+         'Disagree': self.answers()[2],
+         'Neutral': self.answers()[3],
+         'Agree': self.answers()[4],
+         'Strongly Agree': self.answers()[5],
+      }
 
       $.ajax({
-         url: "https://docs.google.com/spreadsheets/d/1sYteDZZyWkmdWNKVaifSp2VYISFBNpBRdaX5q3F-4os/formResponse",
-         data: {"entry.1" : self.answers()[1], "entry.2" : self.answers()[2], "entry.3": self.answers()[3], "entry.4": self.answers()[4]},
+         url: "https://script.google.com/macros/s/AKfycbyJn8NBamgt1zQEJiECZkkl27Ocq2s2_afPRbnFyoZ4Py7ODv1W/exec",
+         data: data,
          type: "POST",
          dataType: "xml",
          statusCode: {
@@ -82,12 +90,15 @@ function ViewModel() {
          }
       });
    }
+   
+   function nextPane() {
+      self.pane(self.pane() + 1);
+   }
+   
+   function prevPane() {
+      self.pane(self.pane() - 1);
+   }
 }
-
-/*
- * setup function:
- * Initializes player names as contenteditables and sets up click handlers on control buttons
- */
 
 function setup() {
    var vModel = new ViewModel();

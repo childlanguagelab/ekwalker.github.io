@@ -98,7 +98,7 @@
   background: #FFFFFF;
 }
 
-#send-wrapper {
+.send-wrapper {
   position: fixed;
   bottom: 0;
   right: 0;
@@ -111,8 +111,9 @@
   z-index: 1;
 }
 
-.send-button {
-  width: 100%;
+.my-button {
+  width: 80px;
+  margin: 0 auto;
   background: #9dbe50;
   color: #FFFFFF;
   border-radius: 3px;
@@ -122,6 +123,40 @@
   font-size: 14px;
 }
 
-.send-button:hover {
+.my-button:hover {
   background: #a4cc45;
+}
+
+.send-button{
+  width: 100%;
+  margin: 0;
+}
+
+.name-wrapper {
+  text-align: center;
+}
+
+.name-wrapper input {
+  height: 22px;
+  width: 200px;
+  border-radius: 3px;
+  margin-bottom: 20px;
+  margin-left: 10px;
+  background: #FFFFFF;
+  border: 1px solid #ddd;
+  font-size: 16px;
+  padding: 4px;
+}
+
+.question-1 th, .question-1 td {
+  width: 140px;
+  text-align: center;
+}
+
+.question-1 .table-question {
+  width: 300px;
+}
+
+.question-1 td.table-question {
+  text-align: left;
 }

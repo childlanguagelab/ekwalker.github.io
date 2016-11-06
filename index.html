@@ -14,7 +14,7 @@
   <script type="text/javascript" src="javascripts/jquery-3.1.1.min.js"></script>
   <script type='text/javascript' src='javascripts/knockout-3.4.0.js'></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  
+
   <script type="text/javascript" src="javascripts/main.js"></script>
   <script src="https://use.fontawesome.com/29564188a7.js"></script>
 
@@ -26,58 +26,98 @@
 <div id="header_wrap" class="outer">
   <header class="inner">
     <h1 id="project_title">Survey</h1>
-    <h2 id="project_tagline">Please drag each statement to the column that best describes your opinion. (4 answers per column)</h2>
+    <h2 id="project_tagline">Please drag each statement to the column that best describes your opinion. (4 answers per
+      column)</h2>
   </header>
-  <div id="send-wrapper" data-bind="visible: !showSave()">
-    <div class="send-button" data-bind="click: submitSurvey">Finish & Send</div>
-  </div>
 </div>
 
 <!-- MAIN CONTENT -->
 <div id="main_content_wrap" class="outer">
   <section id="main_content" class="inner">
+    <!-- ko if: pane() == 0 -->
+    <div class="name-wrapper">
+      <label>Full Name</label><input type="text" data-bind="textInput: name" />
+      <div class="my-button" data-bind="click: nextPane">Next</div>
+    </div>
+    <!-- /ko -->
+    <!-- ko if: pane() == 1 -->
+    <table class="question-1">
+      <thead>
+        <tr>
+          <th class="table-question">Statement</th>
+          <th>Strongly disagree</th>
+          <th>Disagree</th>
+          <th>Neutral</th>
+          <th>Agree</th>
+          <th>Strongly agree</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="table-question">I plan to do some volunteer work.</td>
+          <td><input type="radio" name="q1" value="Strongly disagree" /></td>
+          <td><input type="radio" name="q1" value="Disagree" /></td>
+          <td><input type="radio" name="q1" value="Neutral" /></td>
+          <td><input type="radio" name="q1" value="Agree" /></td>
+          <td><input type="radio" name="q1" value="Strongly agree" /></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="send-wrapper">
+      <div class="my-button send-button" data-bind="click: nextPane">Next</div>
+    </div>
+    <!-- /ko -->
+    <!-- ko if: pane() == 2 -->
     <div id="bucket-0" class="question-container bucket">
       <div id="1" class="question bucket-0" draggable="true">
-        When families do not participate in a session, it is the early intervention provider's responsibility to find a way to engage the parent.
+        When families do not participate in a session, it is the early intervention provider's responsibility to find a
+        way to engage the parent.
       </div>
       <div id="2" class="question bucket-0" draggable="true">
         Families who do not do follow-up activities are less invested in their children.
       </div>
       <div id="3" class="question bucket-0" draggable="true">
-        The role of early intervention providers should be to train, teach, or coach the parents- not to work directly with the child.
+        The role of early intervention providers should be to train, teach, or coach the parents- not to work directly
+        with the child.
       </div>
       <div id="4" class="question bucket-0" draggable="true">
         The parent's role should be to act as their child's parent, not as their teacher.
       </div>
       <div id="5" class="question bucket-0" draggable="true">
-        When early intervention providers teach parents skills to use with their children, parents feel they are not being viewed as capable of meeting their child's needs.
+        When early intervention providers teach parents skills to use with their children, parents feel they are not
+        being viewed as capable of meeting their child's needs.
       </div>
       <div id="6" class="question bucket-0" draggable="true">
         The child's participation in family activities/routines is more important than learning developmental skills.
       </div>
       <div id="7" class="question bucket-0" draggable="true">
-        It is acceptable for providers to do hands-on intervention when families want the provider to work directly with the child.
+        It is acceptable for providers to do hands-on intervention when families want the provider to work directly with
+        the child.
       </div>
       <div id="8" class="question bucket-0" draggable="true">
         All families have the knowledge to select strategies to help their children learn.
       </div>
       <div id="9" class="question bucket-0" draggable="true">
-        Early intervention services should be targeted to the developmental concerns which the family, not the provider, feels are most important.
+        Early intervention services should be targeted to the developmental concerns which the family, not the provider,
+        feels are most important.
       </div>
       <div id="10" class="question bucket-0" draggable="true">
         Early intervention services should always be provided in the home.
       </div>
       <div id="11" class="question bucket-0" draggable="true">
-        There are no circumstances where it is acceptable for early intervention providers to bring in their own materials.
+        There are no circumstances where it is acceptable for early intervention providers to bring in their own
+        materials.
       </div>
       <div id="12" class="question bucket-0" draggable="true">
         Early intervention providers should include other children who are present during a session.
       </div>
       <div id="13" class="question bucket-0" draggable="true">
-        Service coordinators should be the team members who collect all the information about the family's activities/routines.
+        Service coordinators should be the team members who collect all the information about the family's
+        activities/routines.
       </div>
       <div id="14" class="question bucket-0" draggable="true">
-        In order for families to successfully access resources, service coordinators need to provide more assistance than written information or contact names.
+        In order for families to successfully access resources, service coordinators need to provide more assistance
+        than written information or contact names.
       </div>
       <div id="15" class="question bucket-0" draggable="true">
         The child's engagement (e.g. interest/happiness) should be of primary importance in a session.
@@ -86,16 +126,20 @@
         Sessions should be oriented to what the child needs to learn how to do.
       </div>
       <div id="17" class="question bucket-0" draggable="true">
-        Keeping records of their work with children helps providers make informed decisions about what they are teaching families to do.
+        Keeping records of their work with children helps providers make informed decisions about what they are teaching
+        families to do.
       </div>
       <div id="18" class="question bucket-0" draggable="true">
-        There are no opportunities for teamwork or collaboration among providers when early intervention services are provided by independent providers.
+        There are no opportunities for teamwork or collaboration among providers when early intervention services are
+        provided by independent providers.
       </div>
       <div id="19" class="question bucket-0" draggable="true">
-        All early intervention providers, regardless of their discipline, have the skills and abilities to work effectively with all infants and toddlers.
+        All early intervention providers, regardless of their discipline, have the skills and abilities to work
+        effectively with all infants and toddlers.
       </div>
       <div id="20" class="question bucket-0" draggable="true">
-        An early intervention provider's competence is related more to their formal training (e.g. graduate) than to their on-the-job experiences
+        An early intervention provider's competence is related more to their formal training (e.g. graduate) than to
+        their on-the-job experiences
       </div>
     </div>
     <div class="answer-container">
@@ -145,8 +189,11 @@
         <div id="bucket-5" class="answer-content bucket"></div>
       </div>
     </div>
-</div>
-</section>
+    <div class="send-wrapper" data-bind="visible: !showSave()">
+      <div class="my-button send-button" data-bind="click: submitSurvey">Finish & Send</div>
+    </div>
+    <!-- /ko -->
+  </section>
 </div>
 
 <!-- FOOTER  -->
