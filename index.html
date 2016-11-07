@@ -44,12 +44,12 @@
     <!-- /ko -->
     <!-- ko if: pane() == 1 -->
     <div class="my-button"
-         data-bind="click: !showNext1() ? nextPane : null, css: { 'disabled' : !showNext1() }">Next
+         data-bind="click: showNext1() ? nextPane : null, css: { 'disabled' : !showNext1() }">Next
     </div>
     <!-- /ko -->
     <!-- ko if: pane() == 2 -->
     <div class="my-button"
-         data-bind="click: !showNext2() ? nextPane : null, css: { 'disabled' : !showNext2() }">Next
+         data-bind="click: showNext2() ? nextPane : null, css: { 'disabled' : !showNext2() }">Next
     </div>
     <!-- /ko -->
     <!-- ko if: pane() == 3 -->
