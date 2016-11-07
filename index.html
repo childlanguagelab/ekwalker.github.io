@@ -28,10 +28,10 @@
     <h1 id="project_title">Prison Project Survey</h1>
     <h2 id="project_tagline">
       <!-- ko if: pane() == 0 -->
-        Please enter your full name.
+      Please enter your full name.
       <!-- /ko -->
       <!-- ko if: pane() == 1 -->
-        Please select the option that best describes your opinion on the statement.
+      Please select the option that best describes your opinion on the statement.
       <!-- /ko -->
       <!-- ko if: pane() == 2 -->
       Please select the option that best describes your opinion on the statement.
@@ -62,7 +62,7 @@
     <!-- /ko -->
     <!-- ko if: pane() == 3 -->
     <div class="my-button next-button"
-         data-bind="click: !showFinish() ? submitSurvey : null, css: { 'disabled' : !showFinish() }">Finish!
+         data-bind="click: showFinish() ? submitSurvey : null, css: { 'disabled' : !showFinish() }">Finish!
     </div>
     <!-- /ko -->
   </div>
