@@ -253,10 +253,12 @@ function ViewModel() {
 
    function nextPane() {
       self.pane(self.pane() + 1);
+      $('#main_content_wrap').scrollTop(0);
    }
 
    function prevPane() {
       self.pane(self.pane() - 1);
+      $('#main_content_wrap').scrollTop(0);
    }
 
    function showNext0() {
