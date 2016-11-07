@@ -168,6 +168,11 @@
     margin: 0 auto;
 }
 
+.question-1 td:hover {
+    cursor: pointer;
+    background: #ddd;
+}
+
 td label {
     display: block;
     width: 100%;

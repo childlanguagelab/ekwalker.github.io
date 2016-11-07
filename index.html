@@ -26,8 +26,6 @@
 <div id="header_wrap" class="outer">
   <header class="inner">
     <h1 id="project_title">Survey</h1>
-    <h2 id="project_tagline">Please drag each statement to the column that best describes your opinion. (4 answers per
-      column)</h2>
     <div class="button-wrapper">
       <div class="my-button prev-button"
            data-bind="click: showPrev() ? prevPane : null, css: { 'disabled' : !showPrev() }">Previous
@@ -77,16 +75,11 @@
         <tbody data-bind="foreach: q1s">
         <tr>
           <td class="table-question" data-bind="text: question"></td>
-          <td data-bind="click: setValue(1)"><i class="fa"
-                                                data-bind="css: value() == 1 ? 'check-circle-o' : 'circle-o'"/></td>
-          <td data-bind="click: setValue(2)"><i class="fa"
-                                                data-bind="css: value() == 2 ? 'check-circle-o' : 'circle-o'"/></td>
-          <td data-bind="click: setValue(3)"><i class="fa"
-                                                data-bind="css: value() == 3 ? 'check-circle-o' : 'circle-o'"/></td>
-          <td data-bind="click: setValue(4)"><i class="fa"
-                                                data-bind="css: value() == 4 ? 'check-circle-o' : 'circle-o'"/></td>
-          <td data-bind="click: setValue(5)"><i class="fa"
-                                                data-bind="css: value() == 5 ? 'check-circle-o' : 'circle-o'"/></td>
+          <td data-bind="click: setValue(1)"><i class="fa" data-bind="css: value() == 1 ? 'fa-check-circle-o' : 'fa-circle-thin'"/></td>
+          <td data-bind="click: setValue(2)"><i class="fa" data-bind="css: value() == 2 ? 'fa-check-circle-o' : 'fa-circle-thin'"/></td>
+          <td data-bind="click: setValue(3)"><i class="fa" data-bind="css: value() == 3 ? 'fa-check-circle-o' : 'fa-circle-thin'"/></td>
+          <td data-bind="click: setValue(4)"><i class="fa" data-bind="css: value() == 4 ? 'fa-check-circle-o' : 'fa-circle-thin'"/></td>
+          <td data-bind="click: setValue(5)"><i class="fa" data-bind="css: value() == 5 ? 'fa-check-circle-o' : 'fa-circle-thin'"/></td>
         </tr>
         </tbody>
       </table>
