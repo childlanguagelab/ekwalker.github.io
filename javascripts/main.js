@@ -275,13 +275,20 @@ function ViewModel() {
    }
    
    function selectQuestion(id) {
-      self.selectedQuestion(id);
+      if(self.selectedQuestion() == 0) {
+         self.selectedQuestion(id);
+      } else {
+         var question = $('#' + id);
+         question.parent().append($('#' + self.selectedQuestion()));
+         self.selectedQuestion(0);
+      }
    }
    
    function moveQuestion(bucketId) {
       var bucket = $('#bucket-' + bucketId);
       bucket.append($('#' + self.selectedQuestion()));
       self.selectedQuestion(0);
+      checkBuckets();
    }
    
    function reset() {
