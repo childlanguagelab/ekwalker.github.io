@@ -24,7 +24,7 @@
 
 <!-- HEADER -->
 <div id="header_wrap" class="outer">
-  <header class="inner">
+  <header class="inner" style="display: none" data-bind="visible: true">
     <h1 id="project_title">Prison Project Survey</h1>
     <h2 id="project_tagline">
       <!-- ko if: pane() == 0 -->
@@ -39,8 +39,9 @@
       <!-- ko if: pane() == 3 -->
       Please drag each statement to the column that best describes your opinion. (4 answers per column)
       <!-- /ko -->
+    </h2>
   </header>
-  <div class="button-wrapper">
+  <div class="button-wrapper" style="display: none" data-bind="visible: true">
     <div class="my-button prev-button"
          data-bind="click: showPrev() ? prevPane : null, css: { 'disabled' : !showPrev() }">Previous
     </div>
@@ -69,7 +70,7 @@
 
 <!-- MAIN CONTENT -->
 <div id="main_content_wrap" class="outer">
-  <section id="main_content" class="inner">
+  <section id="main_content" class="inner" style="display: none" data-bind="visible: true">
     <div class="name-wrapper" data-bind="visible: pane() == 0">
       <label>Full Name</label><input type="text" data-bind="textInput: name, event: { keypress: onEnter }" />
     </div>
