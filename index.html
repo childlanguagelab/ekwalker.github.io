@@ -71,7 +71,7 @@
 <div id="main_content_wrap" class="outer">
   <section id="main_content" class="inner">
     <div class="name-wrapper" data-bind="visible: pane() == 0">
-      <label>Full Name</label><input type="text" data-bind="textInput: name"/>
+      <label>Full Name</label><input type="text" data-bind="textInput: name, event: { keypress: onEnter }" />
     </div>
     <div data-bind="visible: pane() == 1">
       <table class="question-1">

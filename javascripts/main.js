@@ -5,6 +5,7 @@ function ViewModel() {
    self.submitSurvey = submitSurvey;
    self.nextPane = nextPane;
    self.prevPane = prevPane;
+   self.onEnter = onEnter;
 
    self.pane = ko.observable(0);
    self.showNext1 = ko.observable(false);
@@ -257,6 +258,13 @@ function ViewModel() {
 
    function showPrev() {
       return self.pane() > 0;
+   }
+
+   function onEnter(d,e){
+      if(e.keyCode === 13 && self.name().length > 0) {
+         nextPane();  
+      }
+      return true;
    }
 }
 
