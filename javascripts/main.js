@@ -281,6 +281,7 @@ function ViewModel() {
          var question = $('#' + id);
          question.parent().append($('#' + self.selectedQuestion()));
          self.selectedQuestion(0);
+         checkBuckets();
       }
    }
    
