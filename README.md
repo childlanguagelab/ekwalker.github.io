@@ -1,7 +1,7 @@
 TODO:
 1. Make submit go to google sheets - DONE
-2. Add 'Name' pane
-3. More panes
+2. Add 'Name' pane - DONE
+3. More panes - 1/2
 4. Responsiveness (min widths)
 5. Restyle?
 6. Import?

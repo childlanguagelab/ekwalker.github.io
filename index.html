@@ -28,181 +28,181 @@
     <h1 id="project_title">Survey</h1>
     <h2 id="project_tagline">Please drag each statement to the column that best describes your opinion. (4 answers per
       column)</h2>
+      <div class="button-wrapper">
+          <div class="my-button prev-button" data-bind="click: showPrev() ? prevPane : null, css: { 'disabled' : !showPrev() }">Previous</div>
+          <!-- ko if: pane() == 0 -->
+          <div class="my-button next-button" data-bind="click: showNext0() ? nextPane : null, css: { 'disabled' : !showNext0() }">Next</div>
+          <!-- /ko -->
+          <!-- ko if: pane() == 1 -->
+          <div class="my-button next-button" data-bind="click: showNext1() ? nextPane : null, css: { 'disabled' : !showNext1() }">Next</div>
+          <!-- /ko -->
+          <!-- ko if: pane() == 2 -->
+          <div class="my-button next-button" data-bind="click: showNext2() ? nextPane : null, css: { 'disabled' : !showNext2() }">Next</div>
+          <!-- /ko -->
+          <!-- ko if: pane() == 3 -->
+          <div class="my-button next-button" data-bind="click: showFinish() ? nextPane : null, css: { 'disabled' : !showFinish() }">Finish & Send</div>
+          <!-- /ko -->
+      </div>
   </header>
 </div>
 
 <!-- MAIN CONTENT -->
 <div id="main_content_wrap" class="outer">
   <section id="main_content" class="inner">
-    <!-- ko if: pane() == 0 -->
-    <div class="name-wrapper">
+    <div class="name-wrapper" data-bind="visible: pane() == 0">
       <label>Full Name</label><input type="text" data-bind="textInput: name" />
-      <div class="my-button" data-bind="click: nextPane">Next</div>
     </div>
-    <!-- /ko -->
-    <!-- ko if: pane() == 1 -->
-    <table class="question-1">
-      <thead>
-        <tr>
-          <th class="table-question">Statement</th>
-          <th>Strongly disagree</th>
-          <th>Disagree</th>
-          <th>Neutral</th>
-          <th>Agree</th>
-          <th>Strongly agree</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="table-question">I plan to do some volunteer work.</td>
-          <td><input type="radio" name="q1" value="Strongly disagree" /></td>
-          <td><input type="radio" name="q1" value="Disagree" /></td>
-          <td><input type="radio" name="q1" value="Neutral" /></td>
-          <td><input type="radio" name="q1" value="Agree" /></td>
-          <td><input type="radio" name="q1" value="Strongly agree" /></td>
-        </tr>
-      </tbody>
-    </table>
-    <div class="send-wrapper">
-      <div class="my-button send-button" data-bind="click: nextPane">Next</div>
+    <div data-bind="visible: pane() == 1">
+        <table class="question-1">
+          <thead>
+            <tr>
+              <th class="table-question">Statement</th>
+              <th>Strongly disagree</th>
+              <th>Disagree</th>
+              <th>Neutral</th>
+              <th>Agree</th>
+              <th>Strongly agree</th>
+            </tr>
+          </thead>
+          <tbody data-bind="foreach: q1s">
+            <tr>
+              <td class="table-question" data-bind="text: question"></td>
+              <td data-bind="click: setValue(1)"><i class="fa" data-bind="css: value() == 1 ? 'check-circle-o' : 'circle-o'" /></td>
+              <td data-bind="click: setValue(2)"><i class="fa" data-bind="css: value() == 2 ? 'check-circle-o' : 'circle-o'" /></td>
+              <td data-bind="click: setValue(3)"><i class="fa" data-bind="css: value() == 3 ? 'check-circle-o' : 'circle-o'" /></td>
+              <td data-bind="click: setValue(4)"><i class="fa" data-bind="css: value() == 4 ? 'check-circle-o' : 'circle-o'" /></td>
+              <td data-bind="click: setValue(5)"><i class="fa" data-bind="css: value() == 5 ? 'check-circle-o' : 'circle-o'" /></td>
+            </tr>
+          </tbody>
+        </table>
     </div>
-    <!-- /ko -->
-    <!-- ko if: pane() == 2 -->
-    <div id="bucket-0" class="question-container bucket">
-      <div id="1" class="question bucket-0" draggable="true">
-        When families do not participate in a session, it is the early intervention provider's responsibility to find a
-        way to engage the parent.
-      </div>
-      <div id="2" class="question bucket-0" draggable="true">
-        Families who do not do follow-up activities are less invested in their children.
-      </div>
-      <div id="3" class="question bucket-0" draggable="true">
-        The role of early intervention providers should be to train, teach, or coach the parents- not to work directly
-        with the child.
-      </div>
-      <div id="4" class="question bucket-0" draggable="true">
-        The parent's role should be to act as their child's parent, not as their teacher.
-      </div>
-      <div id="5" class="question bucket-0" draggable="true">
-        When early intervention providers teach parents skills to use with their children, parents feel they are not
-        being viewed as capable of meeting their child's needs.
-      </div>
-      <div id="6" class="question bucket-0" draggable="true">
-        The child's participation in family activities/routines is more important than learning developmental skills.
-      </div>
-      <div id="7" class="question bucket-0" draggable="true">
-        It is acceptable for providers to do hands-on intervention when families want the provider to work directly with
-        the child.
-      </div>
-      <div id="8" class="question bucket-0" draggable="true">
-        All families have the knowledge to select strategies to help their children learn.
-      </div>
-      <div id="9" class="question bucket-0" draggable="true">
-        Early intervention services should be targeted to the developmental concerns which the family, not the provider,
-        feels are most important.
-      </div>
-      <div id="10" class="question bucket-0" draggable="true">
-        Early intervention services should always be provided in the home.
-      </div>
-      <div id="11" class="question bucket-0" draggable="true">
-        There are no circumstances where it is acceptable for early intervention providers to bring in their own
-        materials.
-      </div>
-      <div id="12" class="question bucket-0" draggable="true">
-        Early intervention providers should include other children who are present during a session.
-      </div>
-      <div id="13" class="question bucket-0" draggable="true">
-        Service coordinators should be the team members who collect all the information about the family's
-        activities/routines.
-      </div>
-      <div id="14" class="question bucket-0" draggable="true">
-        In order for families to successfully access resources, service coordinators need to provide more assistance
-        than written information or contact names.
-      </div>
-      <div id="15" class="question bucket-0" draggable="true">
-        The child's engagement (e.g. interest/happiness) should be of primary importance in a session.
-      </div>
-      <div id="16" class="question bucket-0" draggable="true">
-        Sessions should be oriented to what the child needs to learn how to do.
-      </div>
-      <div id="17" class="question bucket-0" draggable="true">
-        Keeping records of their work with children helps providers make informed decisions about what they are teaching
-        families to do.
-      </div>
-      <div id="18" class="question bucket-0" draggable="true">
-        There are no opportunities for teamwork or collaboration among providers when early intervention services are
-        provided by independent providers.
-      </div>
-      <div id="19" class="question bucket-0" draggable="true">
-        All early intervention providers, regardless of their discipline, have the skills and abilities to work
-        effectively with all infants and toddlers.
-      </div>
-      <div id="20" class="question bucket-0" draggable="true">
-        An early intervention provider's competence is related more to their formal training (e.g. graduate) than to
-        their on-the-job experiences
-      </div>
+    <div data-bind="visible: pane() == 2">
+        Pane 2 here
     </div>
-    <div class="answer-container">
-      <div class="answer-bucket">
-        <div class="answer-header">
-          Strongly Disagree
+    <div data-bind="visible: pane() == 3">
+        <div id="bucket-0" class="question-container bucket">
+          <div id="1" class="question bucket-0" draggable="true">
+            When families do not participate in a session, it is the early intervention provider's responsibility to find a
+            way to engage the parent.
+          </div>
+          <div id="2" class="question bucket-0" draggable="true">
+            Families who do not do follow-up activities are less invested in their children.
+          </div>
+          <div id="3" class="question bucket-0" draggable="true">
+            The role of early intervention providers should be to train, teach, or coach the parents- not to work directly
+            with the child.
+          </div>
+          <div id="4" class="question bucket-0" draggable="true">
+            The parent's role should be to act as their child's parent, not as their teacher.
+          </div>
+          <div id="5" class="question bucket-0" draggable="true">
+            When early intervention providers teach parents skills to use with their children, parents feel they are not
+            being viewed as capable of meeting their child's needs.
+          </div>
+          <div id="6" class="question bucket-0" draggable="true">
+            The child's participation in family activities/routines is more important than learning developmental skills.
+          </div>
+          <div id="7" class="question bucket-0" draggable="true">
+            It is acceptable for providers to do hands-on intervention when families want the provider to work directly with
+            the child.
+          </div>
+          <div id="8" class="question bucket-0" draggable="true">
+            All families have the knowledge to select strategies to help their children learn.
+          </div>
+          <div id="9" class="question bucket-0" draggable="true">
+            Early intervention services should be targeted to the developmental concerns which the family, not the provider,
+            feels are most important.
+          </div>
+          <div id="10" class="question bucket-0" draggable="true">
+            Early intervention services should always be provided in the home.
+          </div>
+          <div id="11" class="question bucket-0" draggable="true">
+            There are no circumstances where it is acceptable for early intervention providers to bring in their own
+            materials.
+          </div>
+          <div id="12" class="question bucket-0" draggable="true">
+            Early intervention providers should include other children who are present during a session.
+          </div>
+          <div id="13" class="question bucket-0" draggable="true">
+            Service coordinators should be the team members who collect all the information about the family's
+            activities/routines.
+          </div>
+          <div id="14" class="question bucket-0" draggable="true">
+            In order for families to successfully access resources, service coordinators need to provide more assistance
+            than written information or contact names.
+          </div>
+          <div id="15" class="question bucket-0" draggable="true">
+            The child's engagement (e.g. interest/happiness) should be of primary importance in a session.
+          </div>
+          <div id="16" class="question bucket-0" draggable="true">
+            Sessions should be oriented to what the child needs to learn how to do.
+          </div>
+          <div id="17" class="question bucket-0" draggable="true">
+            Keeping records of their work with children helps providers make informed decisions about what they are teaching
+            families to do.
+          </div>
+          <div id="18" class="question bucket-0" draggable="true">
+            There are no opportunities for teamwork or collaboration among providers when early intervention services are
+            provided by independent providers.
+          </div>
+          <div id="19" class="question bucket-0" draggable="true">
+            All early intervention providers, regardless of their discipline, have the skills and abilities to work
+            effectively with all infants and toddlers.
+          </div>
+          <div id="20" class="question bucket-0" draggable="true">
+            An early intervention provider's competence is related more to their formal training (e.g. graduate) than to
+            their on-the-job experiences
+          </div>
         </div>
-        <div class="error-banner" title="Too many answers in this column, please readjust.">
-          <i class="fa fa-warning"></i> Too many answers
+        <div class="answer-container">
+          <div class="answer-bucket">
+            <div class="answer-header">
+              Strongly Disagree
+            </div>
+            <div class="error-banner" title="Too many answers in this column, please readjust.">
+              <i class="fa fa-warning"></i> Too many answers
+            </div>
+            <div id="bucket-1" class="answer-content bucket"></div>
+          </div>
+          <div class="answer-bucket">
+            <div class="answer-header">
+              Disagree
+            </div>
+            <div class="error-banner" title="Too many answers in this column, please readjust.">
+              <i class="fa fa-warning"></i> Too many answers
+            </div>
+            <div id="bucket-2" class="answer-content bucket"></div>
+          </div>
+          <div class="answer-bucket">
+            <div class="answer-header">
+              Neutral
+            </div>
+            <div class="error-banner" title="Too many answers in this column, please readjust.">
+              <i class="fa fa-warning"></i> Too many answers
+            </div>
+            <div id="bucket-3" class="answer-content bucket"></div>
+          </div>
+          <div class="answer-bucket">
+            <div class="answer-header">
+              Agree
+            </div>
+            <div class="error-banner" title="Too many answers in this column, please readjust.">
+              <i class="fa fa-warning"></i> Too many answers
+            </div>
+            <div id="bucket-4" class="answer-content bucket"></div>
+          </div>
+          <div class="answer-bucket">
+            <div class="answer-header">
+              Strongly Agree
+            </div>
+            <div class="error-banner" title="Too many answers in this column, please readjust.">
+              <i class="fa fa-warning"></i> Too many answers
+            </div>
+            <div id="bucket-5" class="answer-content bucket"></div>
+          </div>
         </div>
-        <div id="bucket-1" class="answer-content bucket"></div>
-      </div>
-      <div class="answer-bucket">
-        <div class="answer-header">
-          Disagree
-        </div>
-        <div class="error-banner" title="Too many answers in this column, please readjust.">
-          <i class="fa fa-warning"></i> Too many answers
-        </div>
-        <div id="bucket-2" class="answer-content bucket"></div>
-      </div>
-      <div class="answer-bucket">
-        <div class="answer-header">
-          Neutral
-        </div>
-        <div class="error-banner" title="Too many answers in this column, please readjust.">
-          <i class="fa fa-warning"></i> Too many answers
-        </div>
-        <div id="bucket-3" class="answer-content bucket"></div>
-      </div>
-      <div class="answer-bucket">
-        <div class="answer-header">
-          Agree
-        </div>
-        <div class="error-banner" title="Too many answers in this column, please readjust.">
-          <i class="fa fa-warning"></i> Too many answers
-        </div>
-        <div id="bucket-4" class="answer-content bucket"></div>
-      </div>
-      <div class="answer-bucket">
-        <div class="answer-header">
-          Strongly Agree
-        </div>
-        <div class="error-banner" title="Too many answers in this column, please readjust.">
-          <i class="fa fa-warning"></i> Too many answers
-        </div>
-        <div id="bucket-5" class="answer-content bucket"></div>
-      </div>
     </div>
-    <div class="send-wrapper" data-bind="visible: !showSave()">
-      <div class="my-button send-button" data-bind="click: submitSurvey">Finish & Send</div>
-    </div>
-    <!-- /ko -->
   </section>
 </div>
-
-<!-- FOOTER  -->
-<div id="footer_wrap" class="outer">
-  <footer class="inner">
-    <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
-  </footer>
-</div>
-
-
 </body>
 </html>
