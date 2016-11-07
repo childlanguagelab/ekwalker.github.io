@@ -148,27 +148,30 @@
     padding: 4px;
 }
 
-.question-1 th, .question-1 td {
+.question-1 th, .question-1 td, table .wide-column {
     width: 140px;
+}
+
+table th, table td {
     text-align: center;
     padding: 5px 10px;
 }
 
-.question-1 .table-question {
+table .table-question {
     width: unset;
 }
 
-.question-1 td.table-question {
+table td.table-question {
     text-align: left;
 }
 
-.question-1 {
+table {
     width: 90%;
     min-width: 1000px;
     margin: 0 auto;
 }
 
-.question-1 td:hover {
+table td:hover {
     cursor: pointer;
     background: #ddd;
 }

@@ -47,7 +47,7 @@
       <!-- /ko -->
       <!-- ko if: pane() == 3 -->
       <div class="my-button next-button"
-           data-bind="click: showFinish() ? nextPane : null, css: { 'disabled' : !showFinish() }">Finish & Send
+           data-bind="click: !showFinish() ? submitSurvey : null, css: { 'disabled' : !showFinish() }">Finish!
       </div>
       <!-- /ko -->
     </div>
@@ -75,17 +75,62 @@
         <tbody data-bind="foreach: q1s">
         <tr>
           <td class="table-question" data-bind="text: question"></td>
-          <td data-bind="click: setValue(1)"><i class="fa" data-bind="css: value() == 1 ? 'fa-check-circle-o' : 'fa-circle-thin'"/></td>
-          <td data-bind="click: setValue(2)"><i class="fa" data-bind="css: value() == 2 ? 'fa-check-circle-o' : 'fa-circle-thin'"/></td>
-          <td data-bind="click: setValue(3)"><i class="fa" data-bind="css: value() == 3 ? 'fa-check-circle-o' : 'fa-circle-thin'"/></td>
-          <td data-bind="click: setValue(4)"><i class="fa" data-bind="css: value() == 4 ? 'fa-check-circle-o' : 'fa-circle-thin'"/></td>
-          <td data-bind="click: setValue(5)"><i class="fa" data-bind="css: value() == 5 ? 'fa-check-circle-o' : 'fa-circle-thin'"/></td>
+          <td data-bind="click: function() { setValue(1); }"><i class="fa" data-bind="css: value() == 1 ? 'fa-check-circle-o' : 'fa-circle-thin'"/></td>
+          <td data-bind="click: function() { setValue(2); }"><i class="fa" data-bind="css: value() == 2 ? 'fa-check-circle-o' : 'fa-circle-thin'"/></td>
+          <td data-bind="click: function() { setValue(3); }"><i class="fa" data-bind="css: value() == 3 ? 'fa-check-circle-o' : 'fa-circle-thin'"/></td>
+          <td data-bind="click: function() { setValue(4); }"><i class="fa" data-bind="css: value() == 4 ? 'fa-check-circle-o' : 'fa-circle-thin'"/></td>
+          <td data-bind="click: function() { setValue(5); }"><i class="fa" data-bind="css: value() == 5 ? 'fa-check-circle-o' : 'fa-circle-thin'"/></td>
         </tr>
         </tbody>
       </table>
     </div>
     <div data-bind="visible: pane() == 2">
-      Pane 2 here
+      <table class="question-2">
+        <thead>
+        <tr class="super-header">
+          <th class="table-question"></th>
+          <th>Uncertain</th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th>Certain</th>
+          
+        </tr>
+        <tr>
+          <th class="table-question">Statement</th>
+          <th>1</th>
+          <th>2</th>
+          <th>3</th>
+          <th>4</th>
+          <th>5</th>
+          <th>6</th>
+          <th>7</th>
+          <th>8</th>
+          <th>9</th>
+          <th>10</th>
+        </tr>
+        </thead>
+        <tbody data-bind="foreach: q2s">
+        <tr>
+          <td class="table-question" data-bind="text: question"></td>
+          <td data-bind="click: function() { setValue(1); }"><i class="fa" data-bind="css: value() == 1 ? 'fa-check-circle-o' : 'fa-circle-thin'"/></td>
+          <td data-bind="click: function() { setValue(2); }"><i class="fa" data-bind="css: value() == 2 ? 'fa-check-circle-o' : 'fa-circle-thin'"/></td>
+          <td data-bind="click: function() { setValue(3); }"><i class="fa" data-bind="css: value() == 3 ? 'fa-check-circle-o' : 'fa-circle-thin'"/></td>
+          <td data-bind="click: function() { setValue(4); }"><i class="fa" data-bind="css: value() == 4 ? 'fa-check-circle-o' : 'fa-circle-thin'"/></td>
+          <td data-bind="click: function() { setValue(5); }"><i class="fa" data-bind="css: value() == 5 ? 'fa-check-circle-o' : 'fa-circle-thin'"/></td>
+          <td data-bind="click: function() { setValue(6); }"><i class="fa" data-bind="css: value() == 6 ? 'fa-check-circle-o' : 'fa-circle-thin'"/></td>
+          <td data-bind="click: function() { setValue(7); }"><i class="fa" data-bind="css: value() == 7 ? 'fa-check-circle-o' : 'fa-circle-thin'"/></td>
+          <td data-bind="click: function() { setValue(8); }"><i class="fa" data-bind="css: value() == 8 ? 'fa-check-circle-o' : 'fa-circle-thin'"/></td>
+          <td data-bind="click: function() { setValue(9); }"><i class="fa" data-bind="css: value() == 9 ? 'fa-check-circle-o' : 'fa-circle-thin'"/></td>
+          <td data-bind="click: function() { setValue(10); }"><i class="fa" data-bind="css: value() == 10 ? 'fa-check-circle-o' : 'fa-circle-thin'"/></td>
+        </tr>
+        </tbody>
+      </table>
     </div>
     <div data-bind="visible: pane() == 3">
       <div id="bucket-0" class="question-container bucket">
