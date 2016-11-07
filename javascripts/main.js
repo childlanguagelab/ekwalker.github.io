@@ -8,12 +8,14 @@ function ViewModel() {
    self.onEnter = onEnter;
    self.selectQuestion = selectQuestion;
    self.moveQuestion = moveQuestion;
+   self.reset = reset;
 
    self.pane = ko.observable(0);
    self.showNext1 = ko.observable(false);
    self.showNext2 = ko.observable(false);
    self.showFinish = ko.observable(false);
    self.selectedQuestion = ko.observable(0);
+   self.loading = ko.observable(false);
    self.name = ko.observable('');
    self.answers1 = ko.observableArray([]);
    self.answers2 = ko.observableArray([]);
@@ -126,6 +128,8 @@ function ViewModel() {
    }
 
    function submitSurvey() {
+      self.loading(true);
+      
       //Survey #1
       $.each(self.q1s(), function (key) {
          var question = self.q1s()[key];
@@ -216,10 +220,10 @@ function ViewModel() {
          dataType: "xml",
          statusCode: {
             0: function () {
-               window.alert('success?');
+               reset();
             },
             200: function () {
-               window.alert('success?');
+               reset();
             }
          }
       });
@@ -278,6 +282,75 @@ function ViewModel() {
       var bucket = $('#bucket-' + bucketId);
       bucket.append($('#' + self.selectedQuestion()));
       self.selectedQuestion(0);
+   }
+   
+   function reset() {
+      self.pane(0);
+      self.showNext1(false);
+      self.showNext2(false);
+      self.showFinish(false);
+      self.selectedQuestion(0);
+      self.name('');
+      self.answers1([]);
+      self.answers2([]);
+      self.answers3([]);
+      self.q1s([
+         new Question("I plan to do some volunteer work."),
+         new Question("I plan to become involved in my community."),
+         new Question("I plan to participate in a community action program."),
+         new Question("I plan to become an active member of my community."),
+         new Question("In the future, I plan to participate in a community service organization."),
+         new Question("I plan to help others who are in difficulty."),
+         new Question("I am committed to making a positive difference."),
+         new Question("I can listen to other people's opinions."),
+         new Question("I can work cooperatively with a group of people."),
+         new Question("I can think logically in solving problems."),
+         new Question("I can easily get along with people."),
+         new Question("I try to find effective ways of resolving problems."),
+         new Question("When trying to understand the position of other, I try to place myself in their positions."),
+         new Question("I find it easy to make friends."),
+         new Question("I can think analytically in solving problems."),
+         new Question("I try to place myself in the place of others in trying to assess their current situation."),
+         new Question("I tend to solve problems by talking them out."),
+         new Question("I am aware of current events."),
+         new Question("I am knowledgeable of the issues facing the world."),
+         new Question("I am aware of the events happening in my local community."),
+         new Question("I plan to be involved in the political process."),
+         new Question("I understand the issues facing my city's community."),
+         new Question("I am a better follower than a leader."),
+         new Question("I am a good leader."),
+         new Question("I have the ability to lead a group of people."),
+         new Question("I would rather have somebody else take the lead in formulating a solution."),
+         new Question("I feel that I can make a difference in the world."),
+         new Question("I don't understand why some people are poor when there are boundless opportunities available to them."),
+         new Question("People are poor because they choose to be poor."),
+         new Question("Individuals are responsible for their own misfortunes."),
+         new Question("We need to look no further than the individual in assessing his/her problems."),
+         new Question("We need to institute reforms within the current system to change our communities."),
+         new Question("We need to change people's attitudes in order to solve social problems."),
+         new Question("It is important that equal opportunity be available to all people."),
+         new Question("It is hard for a group to function effectively when the people involved come from very diverse backgrounds."),
+         new Question("I prefer the company of people who are very similar to me in background and expressions."),
+         new Question("I find it difficult to relate to people from a different race or culture."),
+         new Question("I enjoy meeting people who come from background very different from my own."),
+         new Question("Cultural diversity within a group makes the group more interesting and effective.")
+      ]);
+
+      self.q2s([
+         new Question("If I choose to participate in community service in the future, I will be able to make a meaningful contribution."),
+         new Question("In the future, I will be able to find community service opportunities which are relevant to my interests and abilities."),
+         new Question("I am confident that, through community service, I can help in promoting social justice."),
+         new Question("I am confident that, through community service, I can make a difference in my community."),
+         new Question("I am confident that I can help individuals in need by participating in community service activities."),
+         new Question("I am confident that, in future community service activities, I will be able to interact with relevant professionals in ways that are meaningful and effective."),
+         new Question("I am confident that, through community service, I can help in promoting equal opportunity for citizens."),
+         new Question("Through community service, I can apply knowledge in ways that solve \"real-life\" problems."),
+         new Question(" By participating in community service, I can help people to help themselves."),
+         new Question("I am confident that I will participate in community service activities in the future.")
+      ]);
+
+      self.loading(false);
+      window.alert("Success! Thank you for your input.");
    }
 }
 

@@ -21,6 +21,12 @@
 </head>
 
 <body onload="setup()">
+<div class="loading" data-bind="visible: loading()">
+  <div class="loading-wrapper">
+    <i class="fa fa-spinner fa-pulse"></i>
+    Loading...
+  </div>
+</div>
 
 <!-- HEADER -->
 <div id="header_wrap" class="outer">
@@ -148,79 +154,79 @@
     </div>
     <div data-bind="visible: pane() == 3">
       <div id="bucket-0" class="question-container bucket">
-        <div id="1" class="question bucket-0" draggable="true" data-bind="click: function() { selectQuestion(1); }, css: {'selected': selectedQuestion() == 1 }">
+        <div id="1" class="question bucket-0" draggable="true" data-bind="click: function() { selectQuestion(1); }, css: {'selected': selectedQuestion() == 1 }, clickBubble: false">
           When families do not participate in a session, it is the early intervention provider's responsibility to find
           a
           way to engage the parent.
         </div>
-        <div id="2" class="question bucket-0" draggable="true" data-bind="click: function() { selectQuestion(2); }, css: {'selected': selectedQuestion() == 2 }">
+        <div id="2" class="question bucket-0" draggable="true" data-bind="click: function() { selectQuestion(2); }, css: {'selected': selectedQuestion() == 2 }, clickBubble: false">
           Families who do not do follow-up activities are less invested in their children.
         </div>
-        <div id="3" class="question bucket-0" draggable="true" data-bind="click: function() { selectQuestion(3); }, css: {'selected': selectedQuestion() == 3 }">
+        <div id="3" class="question bucket-0" draggable="true" data-bind="click: function() { selectQuestion(3); }, css: {'selected': selectedQuestion() == 3 }, clickBubble: false">
           The role of early intervention providers should be to train, teach, or coach the parents- not to work directly
           with the child.
         </div>
-        <div id="4" class="question bucket-0" draggable="true" data-bind="click: function() { selectQuestion(4); }, css: {'selected': selectedQuestion() == 4 }">
+        <div id="4" class="question bucket-0" draggable="true" data-bind="click: function() { selectQuestion(4); }, css: {'selected': selectedQuestion() == 4 }, clickBubble: false">
           The parent's role should be to act as their child's parent, not as their teacher.
         </div>
-        <div id="5" class="question bucket-0" draggable="true" data-bind="click: function() { selectQuestion(5); }, css: {'selected': selectedQuestion() == 5 }">
+        <div id="5" class="question bucket-0" draggable="true" data-bind="click: function() { selectQuestion(5); }, css: {'selected': selectedQuestion() == 5 }, clickBubble: false">
           When early intervention providers teach parents skills to use with their children, parents feel they are not
           being viewed as capable of meeting their child's needs.
         </div>
-        <div id="6" class="question bucket-0" draggable="true" data-bind="click: function() { selectQuestion(6); }, css: {'selected': selectedQuestion() == 6 }">
+        <div id="6" class="question bucket-0" draggable="true" data-bind="click: function() { selectQuestion(6); }, css: {'selected': selectedQuestion() == 6 }, clickBubble: false">
           The child's participation in family activities/routines is more important than learning developmental skills.
         </div>
-        <div id="7" class="question bucket-0" draggable="true" data-bind="click: function() { selectQuestion(7); }, css: {'selected': selectedQuestion() == 7 }">
+        <div id="7" class="question bucket-0" draggable="true" data-bind="click: function() { selectQuestion(7); }, css: {'selected': selectedQuestion() == 7 }, clickBubble: false">
           It is acceptable for providers to do hands-on intervention when families want the provider to work directly
           with
           the child.
         </div>
-        <div id="8" class="question bucket-0" draggable="true" data-bind="click: function() { selectQuestion(8); }, css: {'selected': selectedQuestion() == 8 }">
+        <div id="8" class="question bucket-0" draggable="true" data-bind="click: function() { selectQuestion(8); }, css: {'selected': selectedQuestion() == 8 }, clickBubble: false">
           All families have the knowledge to select strategies to help their children learn.
         </div>
-        <div id="9" class="question bucket-0" draggable="true" data-bind="click: function() { selectQuestion(9); }, css: {'selected': selectedQuestion() == 9 }">
+        <div id="9" class="question bucket-0" draggable="true" data-bind="click: function() { selectQuestion(9); }, css: {'selected': selectedQuestion() == 9 }, clickBubble: false">
           Early intervention services should be targeted to the developmental concerns which the family, not the
           provider,
           feels are most important.
         </div>
-        <div id="10" class="question bucket-0" draggable="true" data-bind="click: function() { selectQuestion(10); }, css: {'selected': selectedQuestion() == 10 }">
+        <div id="10" class="question bucket-0" draggable="true" data-bind="click: function() { selectQuestion(10); }, css: {'selected': selectedQuestion() == 10 }, clickBubble: false">
           Early intervention services should always be provided in the home.
         </div>
-        <div id="11" class="question bucket-0" draggable="true" data-bind="click: function() { selectQuestion(11); }, css: {'selected': selectedQuestion() == 11 }">
+        <div id="11" class="question bucket-0" draggable="true" data-bind="click: function() { selectQuestion(11); }, css: {'selected': selectedQuestion() == 11 }, clickBubble: false">
           There are no circumstances where it is acceptable for early intervention providers to bring in their own
           materials.
         </div>
-        <div id="12" class="question bucket-0" draggable="true" data-bind="click: function() { selectQuestion(12); }, css: {'selected': selectedQuestion() == 12 }">
+        <div id="12" class="question bucket-0" draggable="true" data-bind="click: function() { selectQuestion(12); }, css: {'selected': selectedQuestion() == 12 }, clickBubble: false">
           Early intervention providers should include other children who are present during a session.
         </div>
-        <div id="13" class="question bucket-0" draggable="true" data-bind="click: function() { selectQuestion(13); }, css: {'selected': selectedQuestion() == 13 }">
+        <div id="13" class="question bucket-0" draggable="true" data-bind="click: function() { selectQuestion(13); }, css: {'selected': selectedQuestion() == 13 }, clickBubble: false">
           Service coordinators should be the team members who collect all the information about the family's
           activities/routines.
         </div>
-        <div id="14" class="question bucket-0" draggable="true" data-bind="click: function() { selectQuestion(14); }, css: {'selected': selectedQuestion() == 14 }">
+        <div id="14" class="question bucket-0" draggable="true" data-bind="click: function() { selectQuestion(14); }, css: {'selected': selectedQuestion() == 14 }, clickBubble: false">
           In order for families to successfully access resources, service coordinators need to provide more assistance
           than written information or contact names.
         </div>
-        <div id="15" class="question bucket-0" draggable="true" data-bind="click: function() { selectQuestion(15); }, css: {'selected': selectedQuestion() == 15 }">
+        <div id="15" class="question bucket-0" draggable="true" data-bind="click: function() { selectQuestion(15); }, css: {'selected': selectedQuestion() == 15 }, clickBubble: false">
           The child's engagement (e.g. interest/happiness) should be of primary importance in a session.
         </div>
-        <div id="16" class="question bucket-0" draggable="true" data-bind="click: function() { selectQuestion(16); }, css: {'selected': selectedQuestion() == 16 }">
+        <div id="16" class="question bucket-0" draggable="true" data-bind="click: function() { selectQuestion(16); }, css: {'selected': selectedQuestion() == 16 }, clickBubble: false">
           Sessions should be oriented to what the child needs to learn how to do.
         </div>
-        <div id="17" class="question bucket-0" draggable="true" data-bind="click: function() { selectQuestion(17); }, css: {'selected': selectedQuestion() == 17 }">
+        <div id="17" class="question bucket-0" draggable="true" data-bind="click: function() { selectQuestion(17); }, css: {'selected': selectedQuestion() == 17 }, clickBubble: false">
           Keeping records of their work with children helps providers make informed decisions about what they are
           teaching
           families to do.
         </div>
-        <div id="18" class="question bucket-0" draggable="true" data-bind="click: function() { selectQuestion(18); }, css: {'selected': selectedQuestion() == 18 }">
+        <div id="18" class="question bucket-0" draggable="true" data-bind="click: function() { selectQuestion(18); }, css: {'selected': selectedQuestion() == 18 }, clickBubble: false">
           There are no opportunities for teamwork or collaboration among providers when early intervention services are
           provided by independent providers.
         </div>
-        <div id="19" class="question bucket-0" draggable="true" data-bind="click: function() { selectQuestion(19); }, css: {'selected': selectedQuestion() == 19 }">
+        <div id="19" class="question bucket-0" draggable="true" data-bind="click: function() { selectQuestion(19); }, css: {'selected': selectedQuestion() == 19 }, clickBubble: false">
           All early intervention providers, regardless of their discipline, have the skills and abilities to work
           effectively with all infants and toddlers.
         </div>
-        <div id="20" class="question bucket-0" draggable="true" data-bind="click: function() { selectQuestion(20); }, css: {'selected': selectedQuestion() == 20 }">
+        <div id="20" class="question bucket-0" draggable="true" data-bind="click: function() { selectQuestion(20); }, css: {'selected': selectedQuestion() == 20 }, clickBubble: false">
           An early intervention provider's competence is related more to their formal training (e.g. graduate) than to
           their on-the-job experiences
         </div>
