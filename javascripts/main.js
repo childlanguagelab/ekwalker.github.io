@@ -6,11 +6,14 @@ function ViewModel() {
    self.nextPane = nextPane;
    self.prevPane = prevPane;
    self.onEnter = onEnter;
+   self.selectQuestion = selectQuestion;
+   self.moveQuestion = moveQuestion;
 
    self.pane = ko.observable(0);
    self.showNext1 = ko.observable(false);
-   self.showNext2 = ko.observable(true);
+   self.showNext2 = ko.observable(false);
    self.showFinish = ko.observable(false);
+   self.selectedQuestion = ko.observable(0);
    self.name = ko.observable('');
    self.answers1 = ko.observableArray([]);
    self.answers2 = ko.observableArray([]);
@@ -265,6 +268,16 @@ function ViewModel() {
          nextPane();  
       }
       return true;
+   }
+   
+   function selectQuestion(id) {
+      self.selectedQuestion(id);
+   }
+   
+   function moveQuestion(bucketId) {
+      var bucket = $('#bucket-' + bucketId);
+      bucket.append($('#' + self.selectedQuestion()));
+      self.selectedQuestion(0);
    }
 }
 

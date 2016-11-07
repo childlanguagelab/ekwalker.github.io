@@ -93,9 +93,19 @@
     background: #ddd;
 }
 
-.bucket.over {
+.question.selected {
+    background: #ddd;
+    border: 2px dashed #000;
+}
+
+.bucket.over, .bucket.moveOver {
     border: 2px dashed #000;
     background: #FFFFFF;
+}
+
+.bucket.moveOver:hover {
+    background: #ddd;
+    cursor: pointer;
 }
 
 .button-wrapper {
