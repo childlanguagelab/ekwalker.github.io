@@ -180,6 +180,7 @@ table .table-question {
 
 table td.table-question {
     text-align: left;
+    cursor: default !important;
 }
 
 table {
@@ -190,7 +191,11 @@ table {
 
 table td:hover {
     cursor: pointer;
-    background: #ddd;
+    background: #e1d8f1;
+}
+
+table td.table-question:hover {
+    background: unset;
 }
 
 td label {
