@@ -25,33 +25,46 @@
 <!-- HEADER -->
 <div id="header_wrap" class="outer">
   <header class="inner">
-    <h1 id="project_title">Survey</h1>
-    <div class="button-wrapper">
-      <div class="my-button prev-button"
-           data-bind="click: showPrev() ? prevPane : null, css: { 'disabled' : !showPrev() }">Previous
-      </div>
+    <h1 id="project_title">Prison Project Survey</h1>
+    <h2 id="project_tagline">
       <!-- ko if: pane() == 0 -->
-      <div class="my-button next-button"
-           data-bind="click: showNext0() ? nextPane : null, css: { 'disabled' : !showNext0() }">Next
-      </div>
+        Please enter your full name.
       <!-- /ko -->
       <!-- ko if: pane() == 1 -->
-      <div class="my-button next-button"
-           data-bind="click: showNext1() ? nextPane : null, css: { 'disabled' : !showNext1() }">Next
-      </div>
+        Please select the option that best describes your opinion on the statement.
       <!-- /ko -->
       <!-- ko if: pane() == 2 -->
-      <div class="my-button next-button"
-           data-bind="click: showNext2() ? nextPane : null, css: { 'disabled' : !showNext2() }">Next
-      </div>
+      Please select the option that best describes your opinion on the statement.
       <!-- /ko -->
       <!-- ko if: pane() == 3 -->
-      <div class="my-button next-button"
-           data-bind="click: !showFinish() ? submitSurvey : null, css: { 'disabled' : !showFinish() }">Finish!
-      </div>
+      Please drag each statement to the column that best describes your opinion. (4 answers per column)
       <!-- /ko -->
-    </div>
   </header>
+  <div class="button-wrapper">
+    <div class="my-button prev-button"
+         data-bind="click: showPrev() ? prevPane : null, css: { 'disabled' : !showPrev() }">Previous
+    </div>
+    <!-- ko if: pane() == 0 -->
+    <div class="my-button next-button"
+         data-bind="click: showNext0() ? nextPane : null, css: { 'disabled' : !showNext0() }">Next
+    </div>
+    <!-- /ko -->
+    <!-- ko if: pane() == 1 -->
+    <div class="my-button next-button"
+         data-bind="click: showNext1() ? nextPane : null, css: { 'disabled' : !showNext1() }">Next
+    </div>
+    <!-- /ko -->
+    <!-- ko if: pane() == 2 -->
+    <div class="my-button next-button"
+         data-bind="click: showNext2() ? nextPane : null, css: { 'disabled' : !showNext2() }">Next
+    </div>
+    <!-- /ko -->
+    <!-- ko if: pane() == 3 -->
+    <div class="my-button next-button"
+         data-bind="click: !showFinish() ? submitSurvey : null, css: { 'disabled' : !showFinish() }">Finish!
+    </div>
+    <!-- /ko -->
+  </div>
 </div>
 
 <!-- MAIN CONTENT -->
